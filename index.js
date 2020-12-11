@@ -87,7 +87,7 @@ const checkBestPrice = url => {
         lowest = parseInt(prods[0][0].substring(0, prods[0][0].length - 1).replace(',', '.'));
 
         if (lowest <= threshold) {
-            console.log(`[${moment().format('HH:mm:ss')}] ${chalk.green('info')} :: [skroutz] [${productName}] :: ${chalk.green('REACHED THRESHOLD')} [${lowest}€]`);
+            console.log(`[${moment().format('HH:mm:ss')}] ${chalk.green('info')} :: [bestprice] [${productName}] :: ${chalk.green('REACHED THRESHOLD')} [${lowest}€]`);
             console.log(`[${moment().format('HH:mm:ss')}] ${chalk.green('info')} :: ${chalk.blue('SENDING WEBHOOK...')}`);
             const data =`${productName} is in stock at https://www.bestprice.gr${prods[0][1]} for ${lowest}€`;
             webhook.send(data).catch(console.error);
